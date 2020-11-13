@@ -4,7 +4,6 @@ const { readFile } = require('fs');
 const monk = require('monk');
 const db = monk(process.env.MONGODB_URI);
 const urls = db.get('urls');
-const notFound = await readFile('../../public/404.html');
 urls.createIndex({ slug: 1 }, { unique: true });
 
 module.exports = async function (context, req) {
@@ -18,10 +17,7 @@ module.exports = async function (context, req) {
             };
       }
       else {
-        context.res = {
-            status: 404,
-            body: notFound 
-        }
+        context.res.status(404);
       }
     } catch (error) {
       context.res.status(404);
