@@ -31,6 +31,8 @@ jobs:
           api_location: "api" # Api source code path - optional
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+        env:
+          MONGODB_URI: "mongodb://umbrella:Uea86Yjjb0j8pIdbEIyoyN6dcEoFZarcjiNo5X1lCBNYdKBQVqOdd1ASdFqadjLlxzt0fqhN0U9GCPdSYdaGTg==@umbrella.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@umbrella@"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
