@@ -1,6 +1,5 @@
 require('dotenv').config();
 
-const { readFile } = require('fs');
 const monk = require('monk');
 const db = monk(process.env.MONGODB_URI);
 const urls = db.get('urls');
