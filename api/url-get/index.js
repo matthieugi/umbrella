@@ -17,9 +17,15 @@ module.exports = async function (context, req) {
             };
       }
       else {
-        context.res.status(404);
+        context.res = {
+            status: 302,
+            headers: { location: '/notfound'}
+        }
       }
     } catch (error) {
-      context.res.status(404);
+        context.res = {
+            status: 302,
+            headers: { location: '/notfound'}
+        }
     }
 }
