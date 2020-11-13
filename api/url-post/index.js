@@ -1,5 +1,3 @@
-import { AzureFunction, Context, HttpRequest } from "@azure/functions";
-
 const yup = require('yup');
 const { nanoid } = require('nanoid');
 
@@ -13,7 +11,7 @@ const monk = require('monk');
 const db = monk(process.env.MONGODB_URI);
 const urls = db.get('urls');
 
-const httpTrigger: AzureFunction = async function ({ res, req, log }: Context, request: HttpRequest): Promise<void> {
+module.exports = async function ({res, log}, req) {
     log("entered");
 
     const urls = db.get('urls');
@@ -45,6 +43,4 @@ const httpTrigger: AzureFunction = async function ({ res, req, log }: Context, r
     } catch (error) {
         log(error);
     }
-};
-
-export default httpTrigger;
+}
