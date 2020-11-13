@@ -14,7 +14,7 @@ RUN sudo apt-get update
 RUN sudo apt-get install azure-functions-core-tools-3
 
 #expose running port (React & Azure Function)
-EXPOSE 3000 7071
+EXPOSE 3000 7071 5501
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \

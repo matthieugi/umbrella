@@ -8,8 +8,8 @@
             "type": "pwa-msedge",
             "request": "launch",
             "name": "Launch Edge against localhost",
-            "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}"
+            "url": "http://localhost:5501",
+            "webRoot": "${workspaceFolder}/public"
         },
         {
             "name": "Debug Node",
@@ -17,9 +17,16 @@
             "request": "launch",
             "runtimeExecutable": "npm",
             "runtimeArgs": [
-                "start",
-                "node:debug"
-            ]
+              "run dev"
+            ],
+            "port": 9229    
+        },
+        {
+            "name": "Azure Function",
+            "type": "node",
+            "request": "attach",
+            "port": 9229,
+            "preLaunchTask": "func: host start"
         }
     ],
     "compounds": [
@@ -28,6 +35,13 @@
             "configurations": [
                 "Launch Edge against localhost",
                 "Debug Node"
+            ]
+        },
+        {
+            "name": "Edge & Functions",
+            "configurations": [
+                "Azure Function",
+                "Launch Edge against localhost",
             ]
         }
     ]

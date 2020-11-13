@@ -10,10 +10,10 @@ const app = new Vue({
   methods: {
     async createUrl() {
       this.error = '';
-      const response = await fetch('/url', {
+      const response = await fetch('api/url', {
         method: 'POST',
         headers: {
-          'content-type': 'application/json',
+          'content-type': 'application/json'
         },
         body: JSON.stringify({
           url: this.url,
@@ -23,7 +23,7 @@ const app = new Vue({
       if (response.ok) {
         const result = await response.json();
         this.formVisible = false;
-        this.created = `https://cdg.sh/${result.slug}`;
+        this.created = `http://localhost:7071/api/${result.slug}`;
       } else if (response.status === 429) {
         this.error = 'You are sending too many requests. Try again in 30 seconds.';
       } else {
