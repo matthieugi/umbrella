@@ -9,7 +9,6 @@ const schema = yup.object().shape({
 require('dotenv').config();
 const monk = require('monk');
 const db = monk(process.env.MONGODB_URI);
-const urls = db.get('urls');
 
 module.exports = async function ({res, log}, req) {
     log("entered");
