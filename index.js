@@ -24,7 +24,7 @@ app.use(express.static('./public'));
 
 const notFoundPath = path.join(__dirname, 'public/404.html');
 
-app.get('/:id', async (req, res, next) => {
+app.get('/api/:id', async (req, res, next) => {
   const { id: slug } = req.params;
   try {
     const url = await urls.findOne({ slug });
@@ -42,7 +42,7 @@ const schema = yup.object().shape({
   url: yup.string().trim().url().required(),
 });
 
-app.post('/url', slowDown({
+app.post('/api/url', slowDown({
   windowMs: 30 * 1000,
   delayAfter: 1,
   delayMs: 500,
