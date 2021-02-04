@@ -17,7 +17,7 @@
 
 ## Démo
 
-![Demo worlkflow](/presentation_orverview.png)
+![Demo worlkflow](/presentation_overview.png)
 
 #### Introduction
 
