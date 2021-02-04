@@ -54,6 +54,6 @@
 ## TODO
 
 * [ ] Trouver les actions possibles à faire avec les commentaires dans un PR
-* [ ] Push du code umbrella en mode serverless
+* [x] Push du code umbrella en mode serverless
 * [ ] Création des workflow de validation de code 
 * [ ] Création des workflow de déploiement
