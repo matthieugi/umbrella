@@ -42,7 +42,7 @@
     * Voir ce qu'il est possible à faire ou validation
     * Action à faire (et à trouver) côté ND
 * LD autorise le merge de la pull request
-* Vérification du board Kamabn TODO | IN PROGRESS | DONE 
+* Vérification du board Kanban TODO | IN PROGRESS | DONE 
 
 #### Déploiement
 
