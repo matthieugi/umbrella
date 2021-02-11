@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile 
+
+    ports:
+      - "3000:3000"
+      - "5501:5501"
+      - "7071:7071"
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+  db:
+    image: mongo:latest
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: passwd
+
+volumes:
+  mongodb-data:

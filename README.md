@@ -24,7 +24,6 @@
 * Présentation de l'organisation du projet
 * Histoire utilisation de git en interne
 * Présentation des devContainers 
-
 * Intération avec ses utilisateurs finaux via outil de ticketing (Service now), et création d'une issue lorsque une modification doit être apportée au produit
 
 #### Arrivée d'un nouveau développeur
@@ -42,7 +41,7 @@
     * Voir ce qu'il est possible à faire ou validation
     * Action à faire (et à trouver) côté ND
 * LD autorise le merge de la pull request
-* Vérification du board Kanban TODO | IN PROGRESS | DONE 
+* Vérification du board Kamabn TODO | IN PROGRESS | DONE 
 
 #### Déploiement
 
@@ -57,3 +56,7 @@
 * [x] Push du code umbrella en mode serverless
 * [ ] Création des workflow de validation de code 
 * [ ] Création des workflow de déploiement
+* [ ] Activer GithubCodeSpace chez Matthieu
+* [ ] Coder la fonctionnalité
+* [ ] Trouver une fonctionnalité à rajouter
+* [ ] Créer une issue/configurer issue avec 

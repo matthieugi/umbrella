@@ -1,12 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.140.1/containers/typescript-node
 {
-	"name": "Miniature-umbrella",
-	"build": {
-		"dockerfile": "Dockerfile",
-		// Update 'VARIANT' to pick a Node version: 10, 12, 14
-		"args": { "VARIANT": "14" }
-	},
+	"name": "Dev Velocity Capgemini",
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
@@ -14,6 +9,9 @@
 	},
 
 	"forwardPorts": [3000, 5501, 7071],
+	"dockerComposeFile": "docker-compose.yml",
+	"workspaceFolder": "/workspace",
+	"service": "web",
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
@@ -25,9 +23,8 @@
 		"ms-azuretools.vscode-cosmosdb",
 		"ms-vscode.azurecli",
 		"ritwickdey.liveserver"
-
 	],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "cd api; npm install"
+	"postCreateCommand": "cd api && npm install"
 }
