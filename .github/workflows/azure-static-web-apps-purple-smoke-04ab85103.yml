@@ -23,7 +23,7 @@ jobs:
       - name: Build Docker Environement
         run: docker-compose build
       - name: Run tests
-        run: npm run tests
+        run: npm run test
         working-directory: ./api
       - name: Build And Deploy
         id: builddeploy
