@@ -14,10 +14,17 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+    env:
+      COMPOSE_FILE: .devcontainer/docker-compose.yml
     steps:
       - uses: actions/checkout@v2
         with:
           submodules: true
+      - name: Build Docker Environement
+        run: docker-compose build
+      - name: Run tests
+        run: npm run tests
+        working-directory: ./api
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v0.0.1-preview
