@@ -4,16 +4,18 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
 
 jobs:
   run_unit_and_integration_tests:
     runs-on: ubuntu-latest
     name: Run unit and integration tests
     steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12'
       - name: Start npm test script
         run: npm run test
         working-directory: api
