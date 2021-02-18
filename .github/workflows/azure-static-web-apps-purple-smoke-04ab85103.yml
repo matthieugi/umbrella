@@ -22,9 +22,10 @@ jobs:
           submodules: true
       - name: Build Docker Environement
         run: docker-compose build
+      - name: List running containers
+        run: docker ps -a
       - name: Run tests
-        run: npm run test
-        working-directory: api
+        run: docker exec -w /workspace/api web  npm run test
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v0.0.1-preview
