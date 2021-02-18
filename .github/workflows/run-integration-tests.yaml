@@ -17,6 +17,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '12'
+      - name: Restore dependancies
+        run: npm install
+        working-directory: api
       - name: Start npm test script
         run: npm run test
         working-directory: api
