@@ -15,8 +15,6 @@ module.exports =  async function (context, req) {
     const urls = db.get('urls');
     context.db = db;
 
-    context.log('Entered');
-
     let { slug, url } = req.body;
     try {
         await schema.validate({
