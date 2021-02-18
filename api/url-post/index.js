@@ -10,10 +10,10 @@ require('dotenv').config();
 const monk = require('monk');
 const db = monk(process.env.MONGODB_URI);
 
-module.exports = async function ({res, log}, req) {
-    log("entered");
+module.exports =  async function (context, req) {
 
     const urls = db.get('urls');
+    context.db = db;
 
     let { slug, url } = req.body;
     try {
@@ -38,8 +38,10 @@ module.exports = async function ({res, log}, req) {
             slug,
         };
         const created = await urls.insert(newUrl);
-        res.json(created);
+
+        context.res.body = created;
     } catch (error) {
-        log(error);
+        context.log(error);
+        context.res.status = 500;
     }
 }

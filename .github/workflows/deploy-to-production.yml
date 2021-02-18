@@ -4,16 +4,35 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
 
 jobs:
+  run_unit_and_integration_tests:
+    runs-on: ubuntu-latest
+    name: Run unit and integration tests
+    env:
+      MONGODB_URI: ${{ secrets.DB_DEV }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+      - name: Restore dependancies
+        run: npm install
+        working-directory: api
+      - name: Start npm test script
+        run: npm run test
+        working-directory: api
+
+
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+    needs: run_unit_and_integration_tests
+    env:
+      COMPOSE_FILE: .devcontainer/docker-compose.yml
     steps:
       - uses: actions/checkout@v2
         with:

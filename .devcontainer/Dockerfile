@@ -11,5 +11,8 @@ RUN curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key a
 # Update args in docker-compose.yaml to set the UID/GID of the "node" user.
 USER node
 
+WORKDIR /workspace/api
+RUN npm install
+
 #expose running port (React & Azure Function)
 EXPOSE 3000 7071 5501

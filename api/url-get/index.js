@@ -7,6 +7,8 @@ urls.createIndex({ slug: 1 }, { unique: true });
 
 module.exports = async function (context, req) {
     const { id: slug } = req.params;
+    context.db = db;
+
     try {
       const url = await urls.findOne({ slug });
       if (url) {
