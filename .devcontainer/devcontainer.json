@@ -3,9 +3,10 @@
 {
 	"name": "Dev Velocity Capgemini",
 
+	"remoteUser": "node",
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash"
+		"terminal.integrated.shell.linux": "/bin/bash",
 	},
 
 	"forwardPorts": [3000, 5501, 7071],
@@ -27,5 +28,5 @@
 	],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "cd api && npm install"
+	"postCreateCommand": "chown -R node:node . && cd api && npm install"
 }
