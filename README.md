@@ -2,6 +2,8 @@
 
 ## Prérequis
 
+Newly added comment in description
+
 **Prérequis VS Dev On Container**
  - Visual Studio Code
  - Docker Desktop
@@ -52,9 +54,9 @@
 
 ## TODO
 
-* [ ] Trouver les actions possibles à faire avec les commentaires dans un PR
+* [x] Trouver les actions possibles à faire avec les commentaires dans un PR
 * [x] Push du code umbrella en mode serverless
-* [ ] Création des workflow de validation de code 
+* [x] Création des workflow de validation de code 
 * [ ] Création des workflow de déploiement
 * [ ] Activer GithubCodeSpace chez Matthieu
 * [ ] Coder la fonctionnalité
