@@ -10,7 +10,7 @@ const { nanoid } = require('nanoid');
 
 require('dotenv').config();
 
-const db = monk(process.env.MONGODB_URI);
+const db = monk('mongodb+srv://myDatabaseUser:D1fficultP%40ssw0rd@cluster0.example.mongodb.net/?retryWrites=true&w=majority');
 const urls = db.get('urls');
 urls.createIndex({ slug: 1 }, { unique: true });
 
