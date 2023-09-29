@@ -1,0 +1,7 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+      "FUNCTIONS_WORKER_RUNTIME": "node",
+      "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=meteora975;AccountKey=xHuCFmjqEORsst/skpidk1aaY7dp0yJq5QE/c4WC5zJ7A/LKcZWVUJh71PD7mV1oIpnX6K1YxAHS+ASthfyfew==;EndpointSuffix=core.windows.net"
+    }
+  }
